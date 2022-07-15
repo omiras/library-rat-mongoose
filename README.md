@@ -2,6 +2,8 @@
 
 Queremos implementar una app que permite añadir libros y escritores. Nos comentan que es imporante poder cambiar los datos de los libros y los escritores de forma independiente, por lo que hemos implementado las dos entidades en dos colecciones diferentes, que van a ser relacionadas entre si a partir de su ObjectID.
 
+[Ver Demo](https://oscarm.tinytake.com/msc/NzExMzI4Ml8xOTg2ODMxOA)
+
 ![](https://images.pexels.com/photos/7008914/pexels-photo-7008914.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1)
 
 Arregla los fallos de la app. En cada apartado se especifica que fichero y función hay que modificar. Todas las vistas estan correctas, al igual que los modelos.
