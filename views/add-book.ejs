@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <%- include('./partials/_head.ejs')  %> 
+  </head>
+  <body>
+    <%- include('./partials/_header.ejs')  %> 
+    <h1>Add New Book</h1>
+    <form class="w3-container" action="/catlog/add-book" method="POST">
+        <p>
+        <label>Title</label>
+        <input class="w3-input" type="text" name="title" required></p>
+        <p>
+        <label>Summary</label>
+        <input class="w3-input" type="text" name="summary" required></p>
+        <p>
+        <label>ISBN</label>
+        <input class="w3-input" type="text" name="isbn" required></p>
+        <label>Author</label>
+        <select name="author">
+        <% authors.forEach(function (author) { %> 
+        <option value="<%= author._id %>"><%= author.firstName + ' ' + author.familyName %> </option>
+          <% }); %> 
+      </select>
+        <input class="w3-input" type="submit">
+      </form>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<%- include('./partials/_head.ejs') %>
+    </head>
+
+    <body>
+        <%- include('./partials/_header.ejs') %>
+            <h1>Lista de libros</h1>
+            <ul class="w3-ul w3-border">
+                <% books.forEach(function(book) { %>
+                    <li>
+                        <p>
+                            <strong>Título: </strong>
+                            <%= book.title %>
+                        </p>
+                        <p>
+                            <strong>Resumen: </strong>
+                            <%= book.summary %>
+                        </p>
+                        <p>
+                            <strong>ISBN: </strong>
+                            <%= book.isbn %>
+                        </p>
+                        <p>
+                            <strong>Autor: </strong>
+                            <%= book.author.firstName + ' ' + book.author.familyName %>
+                        </p>
+                    </li>
+                    <% }) %>
+            </ul>
+
+    </body>
+
+</html>
