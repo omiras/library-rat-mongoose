@@ -16,7 +16,7 @@ Arregla los fallos de la app. En cada apartado se especifica que fichero y funci
 
 ## Iteración 1
 
-No podemos añadir autores, pues el controlador no está implementado. Gestiona adecuadamente el POST en la ruta-controlador del fichero **routers/library.js** para añadir un nuevo escritor desde el formulario accesible en [Add Author](http://localhost:3000/catlog/add-author)
+No podemos añadir autores, pues el controlador no está implementado (en esta app no tenemos carpeta **controllers**, están implementados dentro de cada ruta). Gestiona adecuadamente el POST en la ruta-controlador del fichero **routers/library.js** para añadir un nuevo escritor desde el formulario accesible en [Add Author](http://localhost:3000/catlog/add-author)
 
 ```
 router.post('/add-author', async function(req, res) {
@@ -24,11 +24,15 @@ router.post('/add-author', async function(req, res) {
 })
 ```
 
-Una vez arreglado, añade un par de tus escritoras favoritas a la base de datos mediante el formulario.
+Como respuesta puedes enviar en formato JSON el autor que acabas de insertar, tal y como se puede ver en el vídeo.
+
+Una vez arreglado, añade un par de tus escritoras favoritas a la base de datos mediante el formulario. Comprueba que se han añadido los autores correctamente a través de MongoDB Atlas o del plugin de MongoDB de Visual Studio.
 
 ## Iteración 2
 
 Queremos poder ahora añadir libros. El formulario de [Add Book](http://localhost:3000/catlog/add-book) se renderiza correctamente, pero no podemos elegir el escritor del libro. Gestiona adecuadamente el GET en la ruta-controlador del fichero **routers/library.js**
+
+Fíjate que el selector de autores debe mostrar todos los autores disponibles en tu base de datos.
 
 Nota: mientras no completes la iteración 2, no podrás ver el formulario de añadir libro (tendrás un error EJS).
 
@@ -83,4 +87,4 @@ Queremos implementar la opción de reservar un libro.
 5. Crea un endpoint para gestionar el POST /book/:id/book
 6. Añade la reserva al array de reservas del libro
 7. Comprueba que se ha actualizado correctamente el docmento el MongoDB (deberia tener un 'array' de reservas en el campo __bookings__)
-8. **MEGA-BONUS**: Impide que un libro se pueda reservar 
+8. **MEGA-BONUS**: Impide que un libro se pueda reservar entre dos fechas en las que ya está reservado.
