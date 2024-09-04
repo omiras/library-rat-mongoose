@@ -8,6 +8,12 @@ Queremos implementar una app que permite añadir libros y escritores. Nos coment
 
 Arregla los fallos de la app. En cada apartado se especifica que fichero y función hay que modificar. Todas las vistas estan correctas, al igual que los modelos.
 
+## Setup
+
+1. Crea el fiche .env con todas las variables de entorno necesarioas
+2. Instala todas las dependencias del package.json `npm install`
+3. Ejecuta `npm start` para iniciar el servidor
+
 ## Iteración 1
 
 No podemos añadir autores, pues el controlador no está implementado. Gestiona adecuadamente el POST en la ruta-controlador del fichero **routers/library.js** para añadir un nuevo escritor desde el formulario accesible en [Add Author](http://localhost:3000/catlog/add-author)
