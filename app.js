@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var dotenv = require('dotenv');
+dotenv.config();
 
 //Import the mongoose module
 var mongoose = require('mongoose');
@@ -45,7 +47,9 @@ app.use(function (err, req, res, next) {
 
 
 //Set up default mongoose connection
-const mongoDB = "mongodb+srv://root:root@cluster0.lo8dg.mongodb.net/mongoose-library2"; mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
+const mongoDB = process.env.MONGODB_URI;
+
+mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //Get the default connection
 var db = mongoose.connection;
