@@ -16,7 +16,7 @@ router.post('/add-author', async function (req, res) {
   const { firstName, familyName, dateBirth, dateDeath } = req.body;
 
   const createdAuthor = await Author.create({
-    familyName,
+    firstName,
     familyName,
     dateBirth,
     dateDeath
