@@ -25,6 +25,11 @@
                             <strong>Autor: </strong>
                             <%= book.author.firstName + ' ' + book.author.familyName %>
                         </p>
+                        <p>
+                            <a href="/catlog/book/<%= book._id %>/reservation " class="w3-button w3-teal">Reservar
+                                libro</a>
+
+                        </p>
                     </li>
                     <% }) %>
             </ul>

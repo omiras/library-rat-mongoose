@@ -3,6 +3,7 @@ var router = express.Router();
 
 const Book = require('../models/book');
 const Author = require('../models/author');
+const Reservation = require('../models/reservation');
 
 /* GET users listing. */
 router.get('/add-author', function (req, res, next) {
@@ -63,6 +64,36 @@ router.get('/books', async (req, res) => {
   res.render('books', {
     books
   })
+})
+
+router.get('/book/:idBook/reservation', async (req, res) => {
+  const { idBook } = req.params;
+
+  const book = await Book.findById(idBook);
+
+  res.render('reservation', {
+    book
+  });
+
+});
+
+router.post('/reservation/new-reservation', async (req, res) => {
+
+  const { startDate, endDate, idBook } = req.body;
+  const book = await Book.findById(idBook);
+
+  const newReservation = await Reservation.create({
+    startDate,
+    endDate,
+    book: idBook
+  });
+
+  book.reservations.push(newReservation);
+  await book.save();
+
+  res.json(newReservation);
+
+
 })
 
 module.exports = router;
