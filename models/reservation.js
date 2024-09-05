@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const reservationSchema = new mongoose.Schema({
     startDate: Date,
     endDate: Date,
-    book: { type: mongoose.Schema.Types.ObjectId, ref: 'Book' } // Referencia al libro asociado
+    book: { type: mongoose.Schema.Types.ObjectId, ref: 'Books' } // Referencia al libro asociado
 
 });
 

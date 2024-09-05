@@ -85,7 +85,7 @@ router.post('/reservation/new-reservation', async (req, res) => {
   const newReservation = await Reservation.create({
     startDate,
     endDate,
-    book: idBook
+    book: book
   });
 
   book.reservations.push(newReservation);
@@ -95,5 +95,14 @@ router.post('/reservation/new-reservation', async (req, res) => {
 
 
 })
+
+router.get('/reservations', async (req, res) => {
+  const reservations = await Reservation.find().populate('book');
+
+  res.render('list-reservations', {
+    reservations
+  })
+
+});
 
 module.exports = router;
