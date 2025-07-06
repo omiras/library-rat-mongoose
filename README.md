@@ -83,4 +83,5 @@ Queremos implementar la opción de reservar un libro.
 5. Crea un endpoint para gestionar el POST /book/:id/book
 6. Añade la reserva al array de reservas del libro
 7. Comprueba que se ha actualizado correctamente el docmento el MongoDB (deberia tener un 'array' de reservas en el campo __bookings__)
-8. **MEGA-BONUS**: Impide que un libro se pueda reservar 
+8. 
+9. **MEGA-BONUS**: Impide que un libro se pueda reservar dos veces entre dos fechas el las cuales ya existe una reserva previa.
